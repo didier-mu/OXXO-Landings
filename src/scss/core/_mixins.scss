@@ -1,0 +1,128 @@
+
+
+
+// MISC
+
+
+@mixin checkbox {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 15px;
+
+    input{
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        &:checked ~ .checkmark {
+            background-color: #fff;
+        }
+
+        &:checked ~ .checkmark:after {
+            display: block;
+        }
+    }
+
+    span{
+        width: 83%;
+        font-size: calc(14px + 5 * ((100vw - 320px) / 768));
+
+        a{
+            
+            text-decoration: underline;
+        }
+    }
+    
+    .checkmark{
+        height: 26px;
+        width: 25px;
+        border-radius: 5px;
+        border:2px solid ;
+        margin-right: 10px;
+        
+
+        &:after{
+            left: 9px;
+            // top: 7px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 7px;
+            height: 10px;
+            border: solid ;;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            content: "";
+            position: absolute;
+            display: none;
+        }
+    }
+
+}
+
+@mixin combo {
+    background: #fff;
+    border: solid 3px ;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    select{
+        appearance: none;
+        text-align-last:center;
+        height: 50px;
+        padding: 0 10px;
+        font-size:calc(14px + 5 * ((100vw - 320px) / 768));
+        width: 100%;
+        border-radius: 50px;
+        background: url("../img/iconCombo.webp") no-repeat 95% center / 11px #fff;
+        border: 2px solid transparent;
+        cursor: pointer;
+        
+        @include h4;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    
+}
+
+@mixin boton-on {
+    appearance: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    
+    opacity: 1;
+    min-height: 46px;
+    font-size: 20px;
+    margin: 20px auto;
+    color: #fff;
+    border-radius: 50px;
+    transition: .3s ease-in-out all;
+    @include h4;
+
+    &:disabled{
+        color: #ccc;
+    }
+
+    &:focus{
+        outline: none;
+    }
+
+    &:hover{
+        background: #fff;
+        border: 1px solid ;
+        
+    }
+}
+

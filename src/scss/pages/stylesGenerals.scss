@@ -1,0 +1,46 @@
+
+/// TEXTOS
+
+main{
+    font-family: var(--secundariaRegular);
+
+    h1,h2,h3,h4,h5,h6{
+        line-height: 1.3;
+        margin-bottom: 0;
+        text-transform: none;
+        font-weight: normal;
+    }
+}
+
+.combo {
+    @include combo;
+}
+ 
+.checkboxes{
+    @include checkbox;
+}
+
+input[type=button]{
+    @include boton-on;
+}
+
+.error-input{
+    position: absolute;
+    bottom:0;
+    left: 0;
+}
+
+.modal{
+    z-index: 9999;
+
+    .closeModal{
+        display: flex;
+        align-self: flex-end;
+        margin: 20px;
+
+        img{
+            width: 100%;
+            max-width: 20px;
+        }
+    }
+}
