@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="preload" href="css/styles.min.css" as="style">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <title>OXXO </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="js/jquery-3.4.1.min.js"> </script>
+    <script src="js/bootstrap.min.js"> </script>
+    <script src="js/modernizr.js"> </script>
+    <script src="js/scripts.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <main>
+      <section class="home">
+        <div class="container"> 
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <form class="home--sesion--caja d-flex">
+                <h2> <b>Para participar regístrate aquí</b></h2>
+                <div class="d-flex" id="cajaChecks">
+                  <div class="checkboxes" id="cajaEdad">
+                    <div class="check">
+                      <input class="checkbox" id="checkEdad" type="checkbox">
+                      <label class="checkmark" id="checkboxEdad" for="checkEdad"> </label>
+                      <label class="label" id="labelEdads" for="checkEdad">Acepto que soy mayor de 18 años</label>
+                    </div><span class="msjError show">Debes ser mayor de 18 años.</span>
+                  </div>
+                  <div class="checkboxes" id="cajaLegal"> 
+                    <div class="check">
+                      <input class="checkbox" id="checkLegale" type="checkbox">
+                      <label class="checkmark" id="checkboxLegales" for="checkLegale"> </label>
+                      <label class="label" id="labelLegales" for="checkLegale">Acepto <a id="linkTerminos" href="terminos-y-condiciones.php">Términos y Condiciones.</a></label>
+                    </div><span class="msjError show">Debes aceptar los términos y condiciones</span>
+                  </div>
+                </div>
+                <div class="botonera d-flex"><a id="linkFb" href="/registro.php"><img class="img-fluid" id="imgFb" src="https://oxxo-com.s3.amazonaws.com/media-library/589bdf162cb8c73ddda2ba08e456d87c.png" alt="Oxxo facebook"></a><a id="linkGoogle" href="/registro.php"><img class="img-fluid" id="imgGoogle" src="https://oxxo-com.s3.amazonaws.com/media-library/b2f398dea86c7fc26b3b060baf4dc273.png" alt="Oxxo google"></a></div>
+                <h6>Tu información es 100% confidencial. No publicaremos nada en tu nombre</h6>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

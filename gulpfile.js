@@ -16,29 +16,29 @@ let imagemin = require("gulp-imagemin");
 let webp = require("imagemin-webp");
 let extReplace = require("gulp-ext-replace");
 let watch = require('gulp-watch');
-let pugphp = require('gulp-jade-php');
-let php  = require('gulp-connect-php');
+
     
 
 
 
+
 /* ======================================================================================================
- * Tarea PUG to php
+ * Tarea PUG
  * ======================================================================================================*/
 
 
-gulp.task('pugphp', () => {
+gulp.task('pug', () => {
+   
     return gulp.src(['./src/pug/*.pug', '!./src/pug/includes'])
-       
-       .pipe(rename({
-            extname: ".php"
-        }))
-        .pipe(pugphp({
+        .pipe(pug({
             pretty: true
         }))
+        // .pipe(rewriteImagePath({
+        //     path: "build/images",
+        // }))
         .pipe(gulp.dest('./dist/'));
-  });
-
+        
+});
 
 /* ======================================================================================================
  * Tarea sobre los Estilos SCSS
@@ -144,7 +144,7 @@ gulp.task('watch', () => {
     gulp.watch('./src/scss/**/**.scss', gulp.series('sass'));
     gulp.watch('./src/css/**/**.css', gulp.series('minifyCSS'));
     gulp.watch('./src/js/*.js', gulp.series('scripts'));
-    gulp.watch('./src/pug/**/*.pug', gulp.series('pugphp'));
+    gulp.watch('./src/pug/**/*.pug', gulp.series('pug'));
     gulp.watch('./src/img/**/**.*',  gulp.series('img'));
     gulp.watch('./src/fonts/*',  gulp.series('pastefiles'));
     
@@ -156,19 +156,13 @@ gulp.task('watch', () => {
 
 gulp.task('browser-sync', () => {
 
-    php.server({ 
-        base: './dist/',
-        port: 8010,
-        keepalive: true
-    });
-
     browserSync.init({
         injectChanges: true,
-        files: ['*.html', './dist/**/*.{html,php,css,js}'],
-        proxy: '127.0.0.1:8010',
+        files: ['*.html', './dist/**/*.{html,css,js}'],
+        server:"./dist/",
     });
     
-    gulp.watch('./src/pug/**/*.pug', gulp.parallel('pugphp'));
+    gulp.watch('./src/pug/**/*.pug', gulp.parallel('pug'));
     gulp.watch('./src/scss/**/**.scss', gulp.parallel('sass'));
     gulp.watch('./src/css/**/**.css', gulp.parallel('minifyCSS'));
     gulp.watch('./src/js/*.js', gulp.parallel('scripts'));
@@ -182,4 +176,4 @@ gulp.task('browser-sync', () => {
  * Default Task
  * ======================================================================================================*/
 
-gulp.task('default', gulp.parallel('pugphp', "sass", 'scripts', "minifyCSS" , 'img', 'exportWebP', 'pastefiles', 'watch','browser-sync'));
+gulp.task('default', gulp.parallel('pug', "sass", 'scripts', "minifyCSS" , 'img', 'exportWebP', 'pastefiles', 'watch','browser-sync'));

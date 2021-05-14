@@ -1,6 +1,6 @@
 
 //COMPONENTS
-
+@import "components/cajaSesion";
 
 //var
 @import "core/vars";
@@ -11,11 +11,10 @@
 //mixins
 @import "core/mixins";
 
-//utilities
-@import "core/utilities";
 
 //general styles
 @import "layout/body";
+
 
 //media viewports
 @import "layout/media";

@@ -11,10 +11,8 @@
 
     // FONTS
 
-    --primariaRegular:'Conv_Druk Wide Bold';
-    --primariaBold:'Conv_Druk Wide Bold';
-    --secundariaRegular:'centuryRegular';
-    --secundariaBold:'centuryBold';
+    --primariaRegular:'TitilliumWeb-Regular';
+    --primariaBold:'TitilliumWeb-Bold';
 
     --h1:calc(40px + 10 * ((100vw - 1280px) / 1920));
     --h2:calc(32px + 10 * ((100vw - 1280px) / 1920));
@@ -32,4 +30,5 @@
         --h6:calc(12px + 10 * ((100vw - 320px) / 1280));
     }
 }
+
 
